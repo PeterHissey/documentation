@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Using the REST API/1. Introduction.md",
+                "file": "docs/Using the REST API/2. What's new.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Using the REST API/1. Introduction.md",
+                "file": "docs/Using the REST API/2. What's new.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Using the REST API/1. Introduction.md",
+                "file": "docs/Using the REST API/2. What's new.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Using the REST API/1. Introduction.md"
+                "file": "docs/Using the REST API/2. What's new.md"
               }
             }
           }
@@ -173,12 +173,12 @@
   },
   "active": "9527b9813cf8c5cc",
   "lastOpenFiles": [
+    "docs/Using the REST API/1. Introduction.md",
     "docs/Using the REST API/2. What's new.md",
     "docs/Using the REST API/3. Definitions.md",
     "docs/Using the REST API/6. REST API v1 and v2.md",
     "docs/Using the REST API/5. Fundamentals and data model.md",
     "docs/Using the REST API/4. Methods and response codes.md",
-    "docs/Using the REST API/1. Introduction.md",
     "docs/Webhooks/Webhooks additions v11.md",
     "docs/Webhooks/assets/Pasted image 20240612151138.png",
     "docs/Webhooks/assets/Pasted image 20240612151120.png",
