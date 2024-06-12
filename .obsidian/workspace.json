@@ -4,18 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "cb0dac036d44941b",
+        "id": "ac97de3b974f3212",
         "type": "tabs",
         "children": [
           {
-            "id": "e0289277c8da8869",
+            "id": "2a4cfdadbdd2add4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "docs/Using the REST API/11. Query Parameters.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bf6490e740dd5f83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Using the REST API/2. What's new.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9527b9813cf8c5cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Using the REST API/1. Introduction.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -81,13 +110,14 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/Using the REST API/1. Introduction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -97,6 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/Using the REST API/1. Introduction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,15 +149,17 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "docs/Using the REST API/1. Introduction.md"
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -138,10 +171,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c779001196d24dda",
+  "active": "9527b9813cf8c5cc",
   "lastOpenFiles": [
+    "docs/Using the REST API/2. What's new.md",
+    "docs/Using the REST API/3. Definitions.md",
+    "docs/Using the REST API/6. REST API v1 and v2.md",
+    "docs/Using the REST API/5. Fundamentals and data model.md",
+    "docs/Using the REST API/4. Methods and response codes.md",
+    "docs/Using the REST API/1. Introduction.md",
+    "docs/Webhooks/Webhooks additions v11.md",
+    "docs/Webhooks/assets/Pasted image 20240612151138.png",
+    "docs/Webhooks/assets/Pasted image 20240612151120.png",
+    "docs/Webhooks/assets/Pasted image 20240612151054.png",
+    "docs/Webhooks/assets",
+    "docs/Using the REST API/13. Examples.md",
+    "docs/Zendesk Articles/Media Operations Platform REST API Reference - 10.6 – Xytech Systems.md",
+    "docs/Using the REST API/Appendix A. Endpoint list.md",
+    "docs/Using the REST API/11a. Other parameters.md",
+    "docs/Using the REST API/14. Custom field handling.md",
+    "docs/Using the REST API/7. Swagger documentation.md",
+    "docs/Using the REST API/Untitled.md",
+    "docs/Using the REST API/11. Query Parameters.md",
+    "docs/Using the REST API/12. Save Argument Header.md",
+    "docs/Using the REST API/9. Using Postman and CURL.md",
+    "docs/Using the REST API/10. Key fields.md",
+    "docs/Using the REST API/8. Connecting and Authenticating.md",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems.md",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21965149700251.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21965149659035.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21965135300635.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21964854619291.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21958631099419.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21958631095195.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems/21958126786331.png",
+    "docs/Zendesk Articles/Webhooks User Guide – Xytech Systems",
+    "docs/Zendesk Articles/Media Operations Platform REST API Reference - 10.6 – Xytech Systems",
     "docs/Zendesk Articles",
     "docs/Webhooks",
-    "docs/REST API"
+    "docs/Using the REST API"
   ]
 }
