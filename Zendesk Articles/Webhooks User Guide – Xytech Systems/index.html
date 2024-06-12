@@ -1,0 +1,1340 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://peterhissey.github.io/documentation/Zendesk%20Articles/Webhooks%20User%20Guide%20%E2%80%93%20Xytech%20Systems/">
+      
+      
+        <link rel="prev" href="../Media%20Operations%20Platform%20REST%20API%20Reference%20-%2010.6%20%E2%80%93%20Xytech%20Systems/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Webhooks User Guide – Xytech Systems - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Webhooks User Guide – Xytech Systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Using the REST API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using the REST API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/1.%20Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/10.%20Key%20fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Key fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/11.%20Query%20Parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Query Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/11a.%20Other%20parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11a. Other parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/12.%20Save%20Argument%20Header/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Save Argument Header
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/13.%20Examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/14.%20Custom%20field%20handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Custom field handling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/2.%20What%27s%20new/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. What's new
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/3.%20Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/4.%20Methods%20and%20response%20codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Methods and response codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/5.%20Fundamentals%20and%20data%20model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fundamentals and data model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/6.%20REST%20API%20v1%20and%20v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. REST API v1 and v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/7.%20Swagger%20documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Swagger documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/8.%20Connecting%20and%20Authenticating/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Connecting and Authenticating
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/9.%20Using%20Postman%20and%20CURL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Using Postman and CURL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/Appendix%20A.%20Endpoint%20list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appendix A. Endpoint list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Using%20the%20REST%20API/Untitled/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Untitled
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Webhooks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Webhooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Webhooks/Webhooks%20additions%20v11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Webhooks additions v11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Zendesk Articles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Zendesk Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Media%20Operations%20Platform%20REST%20API%20Reference%20-%2010.6%20%E2%80%93%20Xytech%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media Operations Platform REST API Reference   10.6 – Xytech Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Webhooks User Guide – Xytech Systems
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Webhooks User Guide – Xytech Systems
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-new-in-release-v106" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's new in release v10.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outbound-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outbound Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-adaptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Adaptor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Trigger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-adaptor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Adaptor Logs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Adaptor Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-log-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto Log Clean-Up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-errors-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhook Errors Notification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-new-in-release-v106" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's new in release v10.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outbound-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outbound Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-adaptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Adaptor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Trigger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-adaptor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Adaptor Logs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Adaptor Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-log-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto Log Clean-Up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-errors-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhook Errors Notification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Webhooks User Guide – Xytech Systems</h1>
+
+<h2 id="summary"><strong>Summary</strong></h2>
+<p>Introduced with release v10.4 this feature enables users, through the platform UI, to configure triggers that send API payloads to external Web service endpoints. This mechanism allows external systems to initiate workflows based on Xytech-generated messages and make calls back to the platform API to retrieve additional information.</p>
+<p>This feature enhances the existing Event Trigger functionality by adding a new notification type. New setup items now exist to define external host URLs and their endpoints. Each trigger specifies the fields used to dynamically generate the JavaScript Object Notation (JSON) payload and the external endpoint to which the payload will be sent. [10229]</p>
+<p><em>Figure 1 - Webhooks Related Data Objects</em></p>
+<p><img alt="" src="20338456525595.png" /></p>
+<h2 id="whats-new-in-release-v106">What's new in release v10.6</h2>
+<ul>
+<li><a href="https://helpcenter.xytechsystems.com/hc/en-us/articles/20338332222107-Webhooks-User-Guide#h_01HF2WY3AZNSJ1BM3X2E00TCWB">Ability to define custom headers for Export Adaptors</a></li>
+<li><a href="https://helpcenter.xytechsystems.com/hc/en-us/articles/20338332222107-Webhooks-User-Guide#h_01HF2X0A0QN1WNGHVRNDT2F0T5">Enhanced URL fail-over logic for Outbound Connections</a></li>
+</ul>
+<h2 id="setup-items"><strong>Setup Items</strong></h2>
+<h4 id="outbound-connection"><strong>Outbound Connection</strong></h4>
+<p>Outbound Connection defines and sets up the external system’s URL and authentication that are common to one or more endpoints defined by the External Adaptor.</p>
+<p><em>Figure 2 - Standard Layout of an Outbound Connection</em></p>
+<p><img alt="" src="20338473750299.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>Enter a label for the connection, such as the name and version of the external system or interface.</td>
+</tr>
+<tr>
+<td><strong>External Key</strong></td>
+<td>Optionally enter a label to identify the external system, as with any Xytech document.</td>
+</tr>
+<tr>
+<td><strong>Authentication Method</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Select the method used to log in to the external system:</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Basic</strong> - Enter the Username and Password, below.</li>
+<li><strong>API Key</strong> – Enter the Key and Value pair into the Username and Password fields, below. Values will be added to the header.</li>
+<li><strong>Token</strong> - </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base URL 1</strong></p>
+<p><strong>Base URL 2</strong></p>
+<p>| </p>
+<p>Enter the base URL(s) of the external system. </p>
+<p><strong>Base URL 1</strong> is required.</p>
+<p><strong>Base URL 2</strong> is optional. </p>
+<p>See note below on Base URL fail over</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Username</strong></p>
+<table>
+<thead>
+<tr>
+<th>Enter the login account used to authenticate to the external system.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Password</strong></p>
+<p>| Enter the password used to authenticate to the external system. |</p>
+<p><strong>Base URL Fail-over</strong></p>
+<p>Where you have specified a secondary URL, the fail-over logic will be enabled.</p>
+<p>If Base URL 1 does not respond after the retry count, set in the Export Adaptor, the system will then fail-over to Base URL 2.</p>
+<p>Assuming Base URL 2 is successful, all following triggers will first be sent to Base URL 2.</p>
+<p>If Base URL 2 fails to respond, then the system will fail-over back to Base URL 1. </p>
+<p>If both Base URLs are unavailable, the system will give up after the fail-over Base URL fails to respond. (it will not continue to flip-flop between Base URLs)</p>
+<h4 id="export-adaptor"><strong>Export Adaptor</strong></h4>
+<p>Export Adaptors define the endpoint(s) for an Outbound Connection. An Export Adaptor is assigned to a specific Event Trigger so that the triggered payload knows where to be sent.</p>
+<p><em>Figure 3 - Standard Layout for External Adaptor Setup</em></p>
+<p><img alt="" src="21958126786331.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>Enter a label for this adapter, such as the purpose and criteria of the message.</td>
+</tr>
+<tr>
+<td><strong>Output Type</strong></td>
+<td>Select the type of system to which messages will be sent. Currently, only REST is supported.</td>
+</tr>
+<tr>
+<td><strong>Output Format</strong></td>
+<td>Select the standard used to format outbound data, either JSON or XML.</td>
+</tr>
+<tr>
+<td><strong>Response Format</strong></td>
+<td><em>Not used</em> - (will be used from release v11 for response parsing)</td>
+</tr>
+<tr>
+<td><strong>Output Method</strong></td>
+<td>Select the method or verb used to send messages. Available options include POST, PATCH, PUT, and DELETE.</td>
+</tr>
+<tr>
+<td><strong>Connection</strong></td>
+<td>Select the Outbound Connection for this Export Adaptor.</td>
+</tr>
+<tr>
+<td><strong>Endpoint</strong></td>
+<td>Add the endpoint of the API and include the initial backslash. E.g. /orders. The endpoint can include URL Parameters, as described in <em><a href="https://helpcenter.xytechsystems.com/hc/en-us/articles/20338332222107-Webhooks-User-Guide#url_parameters">URL Parameters</a></em> below If there is no endpoint and the payload can be sent to the base URL, simply add a forward slash ‘/’ into the endpoint field.</td>
+</tr>
+<tr>
+<td><strong>Retry Count</strong></td>
+<td>If there is no response from the endpoint, the retry count defines the number of times the system will attempt to send the payload before trying the other Outbound Connection URL (if one has been defined).</td>
+</tr>
+<tr>
+<td><strong>Retry Delay</strong></td>
+<td>The duration in seconds between retries when an outbound message does not receive a response.</td>
+</tr>
+<tr>
+<td><strong>Time Out</strong></td>
+<td>The duration in seconds to wait for a response from the endpoint.</td>
+</tr>
+<tr>
+<td><strong>Disable Logging</strong></td>
+<td>Select (check) to stop capturing activity into the Export Adapter Log. The default setting is deselected (cleared).</td>
+</tr>
+<tr>
+<td><strong>Headers</strong></td>
+<td>Provides the ability for the webhook to send custom headers and whether they are to be treated as Content Headers (default = false)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>URL Parameters<br />
+</strong>URL Parameters can be added to endpoints and include a combination of static text and dynamically populated values from the triggered document. Use the same field naming convention as defining the payload template for an Event Trigger.<br />
+<em>Examples:</em></p>
+<ul>
+<li>
+<ul>
+<li>
+<p>{base URL}/{endpoint}/external_key=[DOC.external_key]</p>
+</li>
+<li>
+<p>{base URL}/{endpoint} /job_no=[DOC.job_no]/jm_episode</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="event-trigger"><strong>Event Trigger</strong></h4>
+<p>The Webhooks functionality builds on the existing Event Trigger features of the Media Operations Platform, providing a notification template option where you can assign an Export Adaptor and the payload template.</p>
+<p>The Event Trigger defines the criteria that determine when a payload is sent, the method and content of the payload, and the Export Adapter to which it is sent.</p>
+<ul>
+<li>The Event Triggers and Conditions tabs determine the criteria of when to send payloads.</li>
+<li>The Notifications tab determines the method used to send the payload.</li>
+<li>The Notification Template tab determines the destination of the trigger content.</li>
+</ul>
+<p>Refer to the <em><strong>Online Help</strong></em> for more information about Event Triggers and how to configure them.</p>
+<p><em>Figure 4 - Event Trigger Source</em></p>
+<p><img alt="" src="21964854619291.png" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Event Trigger options</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table><tbody><tr><td><strong>Active</strong></td><td>Select (check) to make this payload active, or deselect (clear) to stop sending messages for this payload.</td></tr><tr><td><strong>Event Code</strong></td><td>Use the event code of NOTIFY</td></tr><tr><td><strong>Event</strong></td><td><span>Description of the trigger</span></td></tr><tr><td><strong><span>Event Type</span></strong></td><td><p><span>Select when to trigger:</span></p><p><span>INSERT sends messages when a record is first created.</span></p><p><span>UPDATE sends messages when a record is modified.</span></p><p><span>DELETE sends messages when a record is deleted.</span></p></td></tr><tr><td><strong><span>Document</span></strong></td><td><span>Select the data object for the trigger.</span></td></tr><tr><td><strong><span>Doc Table Name</span></strong></td><td><span>Select the sub-table of the document for the trigger.</span></td></tr><tr><td><strong><span>Access</span></strong></td><td><span>Select Global to trigger payloads for the entire system, or select an access method (Division or Work Group) to limit payloads to a specific subset of the system.</span></td></tr><tr><td><strong><span>Division</span></strong></td><td><span>When Access is set to Division, select the Division for which payloads will be sent. Only documents related to the selected Division will generate payloads.</span></td></tr><tr><td><strong><span>Work Group</span></strong></td><td><span>When Access is set to Work Group, select the Work Group for which payloads will be sent. Only documents related to the selected Work Group will generate payloads.</span></td></tr></tbody></table>
+
+<p><strong>Conditions</strong> — Defines the field conditions that initiate a trigger, such as when a specific field is set or modified.</p>
+<p><em>Figure 5 - Event Trigger Conditions</em></p>
+<p><img alt="" src="21965149659035.png" /></p>
+<p><strong>Notifications —</strong> Establishes the notification type – select ‘Email/Alert’ for webhooks.</p>
+<p><em>Figure 6 - Event Trigger Notification Type</em></p>
+<p><img alt="" src="21965135300635.png" /></p>
+<p><strong>Notification Template</strong> — Defines the action to take for the trigger.</p>
+<p><em>Figure 7 -Event Trigger Layout for Export Adaptor</em></p>
+<p><img alt="" src="21965149700251.png" /></p>
+<p><strong>Export Adaptor</strong></p>
+<p>Select the Export Adaptor to use, as configured in the <em><a href="https://helpcenter.xytechsystems.com/hc/en-us/articles/20338332222107-Webhooks-User-Guide#export_adapter">Export Adaptor</a></em> section above.</p>
+<p><strong>Generate Default Template</strong></p>
+<p>Click to generate a standard payload template for the selected Document, Event Type, and Export Adaptor.</p>
+<p>If any of the Document, Event Type, or Export Adaptor Type definitions change, you should re-generate the default template which will overwrite the previous template. If manual changes have been made to the template, you can update manually or note the additions prior to regenerating the template and reapply the changes.</p>
+<p><strong>Export Adaptor Template</strong></p>
+<ul>
+<li>Displays the payload template used to generate the payload.</li>
+<li>Either in JSON or XML format. (The format of the template should match the format specified in the Export Adapter that will use the template.)</li>
+<li>Caution needs to be taken to ensure correct syntax is used and avoid adding carriage returns that add invisible or illegal characters.</li>
+<li>It’s recommended to construct the template in a syntax-checking text editor outside of the Xytech UI first before pasting it back into the UI to avoid errors.</li>
+<li>If there are errors, this will be visible in the export adaptor log during trigger sending and will fail to send.</li>
+<li>Users can add document fields to the payload using the syntax [DOC.fieldName]<br />
+    Optionally, users can drag and drop a field from the Template Fields list on the left into the payload template field. Note that you can only use fields from the triggered document and not related tables.</li>
+</ul>
+<p><em>Figure 8 - Dragging a field from the Template Fields list into the payload template.</em></p>
+<p><img alt="" src="21958631095195.png" /></p>
+<p><strong><em>Prefix File Naming Conventions</em></strong></p>
+<ul>
+<li>The generic ‘DOC’ prefix before the field name is an abbreviation/placeholder for the triggered document. E.g. DOC.wo_no_seq</li>
+<li>You can also use the table name as the prefix to the field name.<br />
+    E.g. jm_work_order.wo_no_seq</li>
+</ul>
+<h2 id="export-adaptor-logs"><strong>Export Adaptor Logs</strong></h2>
+<p>When Export Adaptors are enabled for logging, all external communications will be logged into the Export Adaptor Log to assist with auditing and troubleshooting. (By default, logging is enabled for all adaptors.) From the navigation menu, click <strong>System</strong> and click <strong>Export Adaptor Logs</strong> to view the log entries.</p>
+<p><em>Figure 9 - Export Adaptor Logs List</em></p>
+<p><img alt="" src="20338627703195.png" /></p>
+<p>Click the ID in the <strong>Export Adaptor Log No</strong> column to view the details of a log entry, including all relevant values such as date times and request/response payloads.</p>
+<p><em>Figure 10 - Export Adaptor Log Entry</em></p>
+<p><img alt="" src="20338643730331.png" /></p>
+<p>The Action Menu in individual documents also displays the Export Adaptor Logs for that specific item. For example, when viewing a Work Order, the Action filters the log entries to that specific Work Order only.</p>
+<p><em>Figure 11 - Export Adaptor Logs on the Work Order Action Menu</em></p>
+<p><img alt="" src="21958631099419.png" /></p>
+<h4 id="auto-log-clean-up"><strong>Auto Log Clean-Up</strong></h4>
+<p>To prevent the log tables from growing exponentially due to large payload values, a periodic clean-up process removes the request and response payloads from "old" log items. The system retains the log entry that provides information that the payload was sent but removes the payloads. The default setting for this process is to clean up log items older than 60 days. This setting can be manually overwritten if required via the Application Server configuration settings.</p>
+<h2 id="webhook-errors-notification"><strong>Webhook Errors Notification</strong></h2>
+<p>If you want to be notified by email or an alert pop-up when a webhook fails to send or receives an error response, you can set up an additional Event Trigger on the Export Adaptor Log with a condition set to trigger on receiving an error response status code (or whatever is the most appropriate trigger condition for your integration).</p>
+<h2 id="troubleshooting"><strong>Troubleshooting</strong></h2>
+<p><strong>Trigger Condition Report</strong></p>
+<p>While testing an Event Trigger, it’s recommended to validate the trigger conditions by using the Event Trigger Report run from the modified record to check whether the trigger condition is met prior to saving the record.</p>
+<p><strong>Test by Creating a Mock Web Service using Postman</strong></p>
+<p>There are many ways to create a mock Web service for testing. One of the easiest is to use Postman.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

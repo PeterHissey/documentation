@@ -1,0 +1,1021 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://peterhissey.github.io/documentation/Using%20the%20REST%20API/11.%20Query%20Parameters/">
+      
+      
+        <link rel="prev" href="../10.%20Key%20fields/">
+      
+      
+        <link rel="next" href="../11a.%20Other%20parameters/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>11. Query Parameters - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tip-url-encoding-of-special-characters-eg-and" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. Query Parameters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Using the REST API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using the REST API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.%20Key%20fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Key fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. Query Parameters
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. Query Parameters
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tip-url-encoding-of-special-characters-eg-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIP: URL encoding of special characters e.g. % and +
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultcolumns-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      resultColumns parameter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11a.%20Other%20parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11a. Other parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12.%20Save%20Argument%20Header/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Save Argument Header
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13.%20Examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14.%20Custom%20field%20handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Custom field handling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20What%27s%20new/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. What's new
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Methods%20and%20response%20codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Methods and response codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20Fundamentals%20and%20data%20model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Fundamentals and data model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.%20REST%20API%20v1%20and%20v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. REST API v1 and v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.%20Swagger%20documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Swagger documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.%20Connecting%20and%20Authenticating/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Connecting and Authenticating
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.%20Using%20Postman%20and%20CURL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Using Postman and CURL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appendix%20A.%20Endpoint%20list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appendix A. Endpoint list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Untitled/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Untitled
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Webhooks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Webhooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Webhooks/Webhooks%20additions%20v11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Webhooks additions v11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Zendesk Articles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Zendesk Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Zendesk%20Articles/Media%20Operations%20Platform%20REST%20API%20Reference%20-%2010.6%20%E2%80%93%20Xytech%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media Operations Platform REST API Reference   10.6 – Xytech Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Zendesk%20Articles/Webhooks%20User%20Guide%20%E2%80%93%20Xytech%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Webhooks User Guide – Xytech Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tip-url-encoding-of-special-characters-eg-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIP: URL encoding of special characters e.g. % and +
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultcolumns-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      resultColumns parameter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>11. Query Parameters</h1>
+
+<p><strong>GET</strong> and <strong>PATCH</strong> List endpoints support query parameters.</p>
+<p>This section describes the syntax and options used for the query parameter. This is a mandatory parameter for List documents.</p>
+<p>The general format for a “query” parameter is to add the parameter as <em>query={}</em> to the end of a GET request for a List document after the parameter delimiter (“?”), where the value of query= is a JSON object:</p>
+<p>http://{base_url}/documentList?query={key: value}</p>
+<p>Such as:</p>
+<p>http://{base_url}/jmJobList?query={"job_no": "12345"<a href="http://base_url/jmJobList?query={%22job_no%22:%2212345%22}">}</a></p>
+<p><strong>Note:</strong> The query parameter is supported only for GET and PATCH requests for List type documents and is <strong>not</strong> supported by GET requests for Setup or Maintenance documents.</p>
+<p>In the simplest form, the value is a single piece of information, such as a string or integer. In more complex forms, the value is a JSON object containing specific formats as described below.</p>
+<p>In these examples below, the <em>baseurl</em> is assumed to include the document endpoint<br />
+e.g ‘<a href="https://example.com/api/v2/database/example/JmJobList%E2%80%99">https://example.com/api/v2/database/example/JmJobList’</a></p>
+<h3 id="tip-url-encoding-of-special-characters-eg-and">TIP: URL encoding of special characters e.g. % and +</h3>
+<p>When using HTML special characters as part of the query value, they must be URL encoded.</p>
+<p>Example:  to use a wildcard query such as "<strong>%dave%"</strong>, the % needs substituting with <strong>%25</strong>.  Once URL encoded will look like this <strong>%25dave%25</strong></p>
+<p>Example GET query with URL encoded wildcard :</p>
+<p>{{server}}/MoMediaOrderList?query={"wo_desc":"<strong>%25dave%25</strong>"}&amp;resultcolumns={"L": ["wo_no", "wo_desc"]}</p>
+<p><em>(Specifically the reason why <strong>%dave%</strong> fails to return valid results it that <strong>%da</strong> is the encoding for the <strong>Ú</strong> character)</em></p>
+<p>This also applies to datetime values that use the offset attribute with the + sign.</p>
+<p>To include a value of "<strong>2023-06-01T09:00+5:00</strong>" in a URL query parameter, substitute + with <strong>%2b</strong></p>
+<p>Example:</p>
+<p>?query={"wo_begin_dt":{"$range":["2023-06-01T09:00<strong>%2b</strong>5:00","2023-06-01T17:00<strong>%2b</strong>5:00"]}}</p>
+<ul>
+<li><strong>String or Number</strong></li>
+</ul>
+<table><tbody><tr><td>Description&nbsp;</td><td>The value in returned items must match a specified string. The string<br>can either be letters or numbers. Wildcard ‘%’ can be used.&nbsp;</td></tr><tr><td>Syntax&nbsp;</td><td>“field”:” value”</td></tr><tr><td><p>Examples:</p></td><td><p><em>baseurl</em>?Query={“job_desc”:” Big Apple Live”}</p><p><em>baseurl</em>?Query={“job_desc”:”%Big%”}</p><p><em>baseurl</em>?Query={“job_no”:101101}</p></td></tr></tbody></table>
+
+<p>To specify multiple key/value pairs, separate each key/value pair with a comma:<br />
+<em>baseurl</em>?query={"cust_id":"123","job_type_no":"4"}<br />
+<em>baseurl</em>?query={"cust_id":"123","job_type_no":"4","active":"Y"}<br />
+Note: When specifying multiple key/value pairs, the API will return only items that match ALL specified criteria.</p>
+<ul>
+<li><strong>Range</strong></li>
+</ul>
+<table><tbody><tr><td>Description</td><td>&nbsp;The value in returned items must fall between a specified minimum<br>and maximum numeric value.</td></tr><tr><td>Syntax&nbsp;</td><td>“field”:{"$range":[lower_limit, upper_limit]}</td></tr><tr><td>Examples</td><td>baseurl?Query={“job_no”:{"$range":[100, 199]}}<br>baseurl?query={"wo_begin_dt":{"$range":["2023-12-01","2023-12-31"]}}<br>baseurl?query={"wo_begin_dt":{"$range":["2023-06-01T09:00","2023-06-<br>01T17:00"]}}</td></tr></tbody></table>
+
+<ul>
+<li><strong>In (Set)</strong></li>
+</ul>
+<table><tbody><tr><td>Description&nbsp;</td><td>The value in returned items must match one of the values provided in a given set of values.</td></tr><tr><td>Syntax&nbsp;</td><td>“field”:{"$in":[“value_1”,”value_2”, … ”value_n”]}</td></tr><tr><td>Examples&nbsp;</td><td>baseurl?Query={“job_no”:{"$in":[100, 105, 110, 119]}}</td></tr></tbody></table>
+
+<p><strong>TIP: Searching for multiple wildcard values</strong></p>
+<p>If you wanted to search for multiple wildcard values contained within a single field that all need to exist, then you can include a list of wildcard values.</p>
+<p>For example, if you wanted to search for media assets that have "Tale" AND "Dark" in their "master_desc" field, you can use the following query parameter:</p>
+<p>{"master_desc":{$in:["%Tale%Dark%","%Tale%Dark%"]}}</p>
+<p>Or with encoding of the % symbol (if using Postman) you need:</p>
+<p>{"master_desc":{$in:["%25Tale%25Dark%25","%25Tale%25Dark%25"]}}</p>
+<ul>
+<li><strong>Null / Empty</strong></li>
+</ul>
+<table><tbody><tr><td>Description&nbsp;</td><td>The value in returned items must be NULL. Note: Put pipe characters<br>around NULL to differentiate it from the literal string “NULL”.</td></tr><tr><td>Syntax&nbsp;</td><td>"field”: “|NULL|”&nbsp;</td></tr><tr><td>Examples&nbsp;</td><td>baseurl?Query={“phone_number”:{"|NULL|"}}</td></tr></tbody></table>
+
+<ul>
+<li><strong>NE (Not Equal)</strong></li>
+</ul>
+<table><tbody><tr><td>Description&nbsp;</td><td>The value in returned items must not match the specified number, string, or NULL.</td></tr><tr><td>Syntax&nbsp;</td><td>“field”:{"$ne":”value”}</td></tr><tr><td><p>Examples:<br>&nbsp;Not equal<br>&nbsp;Not null&nbsp;<br>&nbsp;Not like</p></td><td><p>baseurl?Query={"job_desc ":{"$ne":"Big Apple Live"}}<br>baseurl?Query={"cust_id":{"$ne":1001}}<br>baseurl?Query={"jm_phase_external_key":{"$ne":"|NULL|"}}<br>baseurl?Query={"wo_desc":{"$ne":"Test%"},"wo_type_no": 83}&nbsp;</p></td></tr></tbody></table>
+
+<p><strong>NULL Values</strong></p>
+<p>The Null parameter returns any record that has a null value for the specified key, which indicates that no value has ever been set. This differentiates it from an empty string for text-based or date-based properties, a 0 value for numbers, and true or false values for Boolean properties.</p>
+<p><strong>Note:</strong> Not all properties support null values. If possible, check whether the database column in the appropriate column allows nulls.</p>
+<p><strong>Keys</strong> are strings and generally match the column name from a given database table. It is<br />
+recommended to match the case of the key name as shown in the Swagger API documentation if possible.</p>
+<p><strong>Values</strong></p>
+<p>- String values are not case-sensitive.</p>
+<p>- DateTime values should be provided in a valid ISO date format.</p>
+<h2 id="resultcolumns-parameter"><strong>resultColumns parameter</strong></h2>
+<p>Used by the <strong>GET</strong> method on List and (v10.6) Maintenance endpoints.</p>
+<p>ResultColumns parameter is used to define the fields you wish to have returned in the response.<br />
+Without this parameter, the response will contain all document fields.</p>
+<p><em>For example:</em><br />
+{baseurl}/JmJobList?Query={"job_no":2}&amp;resultColumns={"L":["job_no","job_desc"]}</p>
+<p>Job No. and Job Description fields will be included in the response.<br />
+Important to include the “L” top-level element.</p>
+<p><strong>Sub-Table columns</strong></p>
+<p>Many endpoints include related sub-tables in their responses. Example syntax to include specific sub-table columns.</p>
+<p>Below example fetches a tranmission order description and all it's service row numbers:</p>
+<p>{base_url}/XmTransmissionOrder/wo_no_seq=7655-1?resultColumns={"jm_work_order":["wo_desc"],"mo_service_row":["service_row_no"]}</p>
+<p><em>Response:</em></p>
+<p>{</p>
+<p>"jm_work_order": [</p>
+<p>{</p>
+<p>"wo_desc": "WS Transmission Test",</p>
+<p>"mo_service_row": [</p>
+<p>{</p>
+<p>"service_row_no": {</p>
+<p>"service_row_no": 9933,</p>
+<p>"external_key": null</p>
+<p>}</p>
+<p>},</p>
+<p>{</p>
+<p>"service_row_no": {</p>
+<p>"service_row_no": 9934,</p>
+<p>"external_key": null</p>
+<p>}</p>
+<p>}</p>
+<p>]</p>
+<p>}</p>
+<p>]</p>
+<p>}</p>
+<p><strong>Performance recomendation.</strong> Always use the ResultColumns parameter otherwise responses will return large numbers of fields most of which will not be required and only adds to the system perfromance overhead. In future API versions, this will become a mandatory parameter.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
